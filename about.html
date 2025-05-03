@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | Menstrual Advocacy</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  
+
+
+
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo">Menstrual Advocacy</div>
+    <div class="nav-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <header class="about-header">
+    <h1>About Our Advocacy</h1>
+    <p>Breaking the stigma and ensuring menstrual equity for all.</p>
+  </header>
+
+  <section class="about-intro">
+    <h2>Who We Are</h2>
+    <p>
+      We are a passionate group of individuals committed to raising awareness and improving access
+      to menstrual hygiene for girls and women across Ghana. Our organization believes that no one
+      should miss out on education, opportunity, or dignity because of menstruation.
+    </p>
+  </section>
+
+  <section class="about-mission">
+    <h2>Our Mission</h2>
+    <ul>
+      <li>Provide free and affordable menstrual hygiene products to underserved communities.</li>
+      <li>Host educational workshops to combat stigma and misinformation.</li>
+      <li>Advocate for policy change to support menstrual health in schools and public systems.</li>
+    </ul>
+  </section>
+
+  <section class="about-vision">
+    <h2>Our Vision</h2>
+    <p>
+      A world where menstruation is never a barrier to education, health, or dignity. We envision
+      a society that embraces inclusivity, empathy, and empowerment for every menstruating person.
+    </p>
+  </section>
+
+  <!-- Our Team Section -->
+  <section class="our-team">
+    <h2>Meet Our Team</h2>
+    <div class="swiper mySwiper team-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide team-member">
+            <img src="images/owner.jfif" alt="Team Member 1" />
+            <h3>Jane Doe</h3>
+            <p>Founder & Director</p>
+          </div>
+          
+          <div class="swiper-slide team-member">
+            <img src="images/manager.jfif" alt="Team Member 2" />
+            <h3>John Smith</h3>
+            <p>Program Manager</p>
+          </div>
+          <div class="swiper-slide team-member">
+            <img src="images/emily.jfif" alt="Team Member 3" />
+            <h3>Emily Davis</h3>
+            <p>Health Educator</p>
+          </div>
+          <!-- Add more slides as needed -->
+        </div>
+      
+        <!-- Add navigation buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Menstrual Advocacy. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        }
+      }
+    });
+  </script>
+  
+</body>
+</html>

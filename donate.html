@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donate | Menstrual Advocacy</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">Menstrual Advocacy</div>
+    <div class="nav-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="donate-header">
+    <h1>Your Donation Makes a Difference</h1>
+    <p>Help us provide menstrual hygiene products, education, and support for girls in need.</p>
+    <a href="#donation-form" class="donate-cta">Donate Now</a>
+  </header>
+
+  <section class="donation-options">
+    <h2>Choose How to Give</h2>
+    <div class="option-cards">
+      <div class="card">
+        <h3>₵50</h3>
+        <p>Provides pads for 5 girls for a month</p>
+      </div>
+      <div class="card">
+        <h3>₵100</h3>
+        <p>Supports an educational workshop</p>
+      </div>
+      <div class="card">
+        <h3>₵200+</h3>
+        <p>Helps sustain our outreach programs</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="impact">
+    <h2>Your Impact</h2>
+    <p>100% of your donation goes toward menstrual products, workshops, and community support programs. Every cedi counts.</p>
+  </section>
+
+  <section class="donation-form" id="donation-form">
+    <h2>Donate Now</h2>
+    <form id="paymentForm">
+        <input type="text" id="name" placeholder="Full Name" required />
+        <input type="email" id="email" placeholder="Email Address" required />
+      
+        <select id="amountSelect" required>
+          <option value="">Select Amount</option>
+          <option value="50">₵50</option>
+          <option value="100">₵100</option>
+          <option value="200">₵200</option>
+          <option value="custom">Custom Amount</option>
+        </select>
+      
+        <input type="number" id="customAmount" placeholder="Enter custom amount (₵)" style="display:none;" min="1" />
+      
+        <input type="tel" id="phone" placeholder="Mobile Money Number" required />
+        <button type="submit">Proceed to Payment</button>
+      </form>
+      
+
+      <script>
+        function toggleMenu() {
+          document.getElementById('navLinks').classList.toggle('active');
+        }
+      </script>
+  
+
+
+      <script src="https://js.paystack.co/v1/inline.js"></script>
+      <script>
+        const paymentForm = document.getElementById('paymentForm');
+        const amountSelect = document.getElementById('amountSelect');
+        const customAmount = document.getElementById('customAmount');
+      
+        amountSelect.addEventListener('change', function () {
+          if (this.value === "custom") {
+            customAmount.style.display = "block";
+            customAmount.setAttribute("required", "required");
+          } else {
+            customAmount.style.display = "none";
+            customAmount.removeAttribute("required");
+          }
+        });
+      
+        paymentForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+      
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+      
+          let amount = amountSelect.value === "custom"
+            ? customAmount.value
+            : amountSelect.value;
+      
+          amount = parseInt(amount) * 100; // Convert to kobo
+      
+          if (isNaN(amount) || amount <= 0) {
+            alert("Please enter a valid donation amount.");
+            return;
+          }
+      
+          var handler = PaystackPop.setup({
+            key: 'pk_test_xxxxxxxxxxxxxxxxxxxxxxxxx', // Replace with your public key
+            email: email,
+            amount: amount,
+            currency: 'GHS',
+            ref: 'DONATE-' + Math.floor(Math.random() * 1000000000),
+            metadata: {
+              custom_fields: [
+                {
+                  display_name: name,
+                  variable_name: "phone",
+                  value: phone,
+                },
+              ],
+            },
+            callback: function (response) {
+              alert('Donation successful. Thank you!');
+              window.location.href = "thank-you.html";
+            },
+            onClose: function () {
+              alert('Payment window closed.');
+            }
+          });
+      
+          handler.openIframe();
+        });
+      </script>
+      
+
+</body>
+</html>

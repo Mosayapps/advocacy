@@ -1,0 +1,767 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background: #fff;
+    color: #333;
+  }
+
+  .navbar {
+    background: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f06292;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .nav-logo {
+    font-weight: bold;
+    color: #e91e63;
+    font-size: 1.2rem;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .nav-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      background: #fff;
+      top: 60px;
+      right: 20px;
+      width: 200px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      padding: 15px;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .nav-toggle {
+      display: block;
+    }
+  }
+  
+
+
+/* video introduction */
+
+.hero-video-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-overlay p {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+.hero-overlay .btn {
+  background-color: #e91e63;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.hero-overlay .btn:hover {
+  background-color: #d81b60;
+}
+
+
+
+  
+  .hero {
+    background: url('../images/Diagnosis.jfif') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero-content {
+    position: relative;
+    color: white;
+    max-width: 700px;
+    z-index: 1;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease forwards;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1.5s ease forwards;
+  }
+  
+  .cta-buttons .btn {
+    text-decoration: none;
+    padding: 12px 25px;
+    margin: 0 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s ease;
+  }
+  
+  .btn.primary {
+    background-color: #e91e63;
+    color: #fff;
+  }
+  
+  .btn.secondary {
+    background-color: #fff;
+    color: #e91e63;
+    border: 2px solid #e91e63;
+  }
+  
+  .btn:hover {
+    transform: scale(1.05);
+  }
+  
+  .mission {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .mission h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 1.8rem;
+    }
+  
+    .cta-buttons .btn {
+      display: block;
+      margin: 10px auto;
+    }
+  }
+  
+
+
+  /* For Counter */
+
+  .counters {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f2f2f2;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .counter-box {
+    flex: 1;
+    margin: 0 20px;
+  }
+  
+  .counter {
+    font-size: 3rem;
+    color: #e91e63;
+    font-weight: bold;
+  }
+  
+
+  /* For Testimonials */
+  .testimonials {
+    background-color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .testimonial-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .testimonial {
+    display: none;
+    font-style: italic;
+    font-size: 1.2rem;
+  }
+  
+  .testimonial.active {
+    display: block;
+  }
+  
+  .testimonial h4 {
+    margin-top: 10px;
+    color: #e91e63;
+  }
+  
+  .testimonial-nav {
+    margin-top: 20px;
+  }
+  
+  .testimonial-nav button {
+    background-color: #e91e63;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.2rem;
+  }
+  
+
+  /* Impact */
+  .impact-section {
+    background-color: #fefefe;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .impact-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .impact-card {
+    flex: 1 1 250px;
+    max-width: 300px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  
+  .impact-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .impact-card i {
+    font-size: 2.5rem;
+    color: #e91e63;
+    margin-bottom: 15px;
+  }
+  
+
+
+  /* Blog Preview */
+  .blog-preview {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .blog-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .blog-card {
+    background: #fff;
+    max-width: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  
+  .blog-card:hover {
+    transform: scale(1.03);
+  }
+  
+  .blog-card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .blog-card h4 {
+    margin: 15px;
+    color: #333;
+  }
+  
+  .blog-card p {
+    margin: 0 15px 10px;
+    color: #666;
+  }
+  
+  .blog-card a {
+    display: inline-block;
+    margin: 10px 15px 20px;
+    color: #e91e63;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+
+  /* floating Button */
+
+  .floating-button-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+  }
+  
+  .floating-button {
+    background-color: #e91e63;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .floating-button:hover {
+    transform: rotate(90deg);
+  }
+  
+  .floating-menu {
+    display: none;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .floating-item {
+    background: white;
+    color: #e91e63;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+  }
+  
+  .floating-item:hover {
+    background-color: #fce4ec;
+    transform: translateX(-5px);
+  }
+
+  
+  
+  /* =========== CONTACT PAGE ======================== */
+
+  .contact-header {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #fce4ec;
+    color: #880e4f;
+  }
+  
+  .contact-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    justify-content: center;
+    background-color: #fff;
+  }
+  
+  .contact-info, .contact-form-box {
+    flex: 1 1 300px;
+    max-width: 500px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .contact-form button {
+    background-color: #e91e63;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+
+
+
+   /* ================= ABOUT PAGE ==================== */
+
+   .about-header {
+    background-color: #fce4ec;
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #880e4f;
+  }
+  
+  .about-intro, .about-mission, .about-vision {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+  }
+  
+  .about-mission ul {
+    padding-left: 1.5rem;
+    list-style-type: disc;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    color: #555;
+  }
+  
+  .our-team {
+    background-color: #f9f9f9;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+  
+  .our-team h2 {
+    font-size: 2rem;
+    color: #880e4f;
+    margin-bottom: 2rem;
+  }
+  
+  .team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  
+  
+  .team-member h3 {
+    font-size: 1.25rem;
+    color: #880e4f;
+  }
+  
+  .team-member p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .team-slider {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .team-member {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .team-member img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+  }
+  
+   /* DONATION PAGE */
+
+   .donate-header {
+    background: #f06292;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .donate-header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .donate-cta {
+    display: inline-block;
+    background: white;
+    color: #e91e63;
+    padding: 12px 24px;
+    margin-top: 20px;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  
+  .donate-cta:hover {
+    background: #ffc1e3;
+  }
+  
+  .donation-options {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .option-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .card {
+    background: #fff0f5;
+    padding: 30px;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+  
+  .impact {
+    background: #fce4ec;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  
+  .donation-form {
+    padding: 40px 20px;
+    background: #fff;
+    text-align: center;
+  }
+  
+  .donation-form form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .donation-form input,
+  .donation-form select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .donation-form button {
+    background: #e91e63;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .donation-form button:hover {
+    background: #c2185b;
+  }
+  
+  .note {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  /* ============================== FOOTER =======================*/
+  .footer {
+    background-color: #111;
+    color: #fff;
+    padding: 40px 20px 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer h3,
+  .footer h4 {
+    margin-bottom: 15px;
+  }
+  
+  .footer-about,
+  .footer-links,
+  .footer-social,
+  .footer-newsletter {
+    flex: 1 1 200px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links a,
+  .footer a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer a:hover {
+    color: #fff;
+  }
+  
+  .social-icons a {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #bbb;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #fff;
+  }
+  
+  .footer-newsletter form {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .footer-newsletter input[type="email"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .footer-newsletter button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #ff6b6b;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .footer-newsletter button:hover {
+    background-color: #ff4c4c;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    font-size: 14px;
+    color: #888;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  
